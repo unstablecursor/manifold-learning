@@ -135,7 +135,7 @@ class Plotters:
             plt.title(title)
         plt.savefig("plots/mnist_.png")
             
-    def plot_embedding_pids(X, y, title=None):
+    def plot_embedding_pids(X, y, title="train"):
         x_min, x_max = np.min(X, 0), np.max(X, 0)
         X = (X - x_min) / (x_max - x_min)
         """Scale and visualize the embedding vectors"""
@@ -152,9 +152,9 @@ class Plotters:
 
         if title is not None:
             plt.title(title)
-        plt.savefig("plots/pid_.png")
+        plt.savefig(f"plots/pid_2d_{title}.png")
         
-    def plot_embedding_pids_3d(X, y, title=None):
+    def plot_embedding_pids_3d(X, y, title="datafold"):
         x_min, x_max = np.min(X, 0), np.max(X, 0)
         X = (X - x_min) / (x_max - x_min)
         """Scale and visualize the embedding vectors"""
@@ -172,7 +172,7 @@ class Plotters:
 
         if title is not None:
             plt.title(title)
-        plt.savefig("plots/pid_3d.png")
+        plt.savefig(f"plots/pid_3d_{title}.png")
 
     def plot_embedding_fashion_mnist_3d(X, y, title=None):
         x_min, x_max = np.min(X, 0), np.max(X, 0)
